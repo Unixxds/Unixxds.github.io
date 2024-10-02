@@ -5,12 +5,13 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: #1d1d1d;
 }
 
 #counter {
+  color: white;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2em;
+  font-size: 6em;
   margin-bottom: 20px;
 }
 
@@ -19,10 +20,12 @@ body {
 }
 
 #coin {
-  width: 100px;
-  height: 100px;
+  width: 350px;
+  height: 350px;
   cursor: pointer;
   transition: transform 0.1s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #coin:active {
@@ -30,11 +33,12 @@ body {
 }
 
 #increment {
+  color: white;
   position: absolute;
   top: 0;
   right: 0;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5em;
+  font-size: 3em;
   opacity: 0;
   transition: opacity 0.5s;
 }
