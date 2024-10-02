@@ -6,7 +6,7 @@ const incrementDisplay = document.getElementById('increment');
 coin.addEventListener('click', () => {
     counter++;
     localStorage.setItem('clickCounter', counter);
-    counterDisplay.textContent = `Счет: ${counter}`;
+    counterDisplay.textContent = `${counter}`;
     
     incrementDisplay.textContent = "+1";
     incrementDisplay.style.opacity = 1;
@@ -16,4 +16,4 @@ coin.addEventListener('click', () => {
     }, 500);
 });
 
-counterDisplay.textContent = `Счет: ${counter}`;
+counterDisplay.textContent = `${counter}`;
