@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+#counter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.coin-container {
+  position: relative;
+}
+
+#coin {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#coin:active {
+  transform: scale(0.95);
+}
+
+#increment {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
