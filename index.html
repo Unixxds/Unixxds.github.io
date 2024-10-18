@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кликер</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Счетчик времени</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #countdown { font-size: 48px; }
+    </style>
 </head>
 <body>
-    <div id="counter">Счет: 0</div>
-    <div class="coin-container">
-        <img id="coin" src="money.png" alt="Кликни на монету!">
-        <div id="increment">+1</div>
-    </div>
-    <script src="script.js"></script>
+
+<div id="countdown">Loading...</div>
+
+<script>
+    const duration = 10 * 60 * 60; // 10 часов в секундах
+    const endTime = Math.floor(Date.now() / 1000) + duration;
+
+    function updateCountdown() {
+        const now = Math.floor(Date.now() / 1000);
+        const timeLeft = endTime - now;
+
+        if (timeLeft <= 0) {
+            document.getElementById('countdown').innerHTML = "Время вышло!";
+        } else {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('countdown').innerHTML = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+
 </body>
 </html>
